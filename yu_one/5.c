@@ -1,3 +1,4 @@
+//xiugai
 #include <stdio.h>
 #include <math.h>
 #define EPSILON 1e-7
@@ -15,23 +16,22 @@ int main() {
 }
 
 double bisection(int p, int q, double (*func)(int, int, double)) {
-    double a = -20;
-    double b = 20;
-    double xp = (a + b) / 2;
-    double c = func(p, q , xp);
+    double a = 20;
+    double b = -20;
+    double c = (a + b) / 2;
 
-    while(fabs(c) >= EPSILON) {
-	if((c * func(p, q , a)) > 0) {
-		a = xp;
-                xp = (a + b) / 2;
-	} else {
-		b = xp;
-                xp = (a + b) / 2;
+    while(fabs(f(p, q, c)) >= EPSILON){
+        if((f(p, q, a) * f(p, q, c)) < 0) {
+            b = c;
+            c = (c + a) / 2;
         }
-	c = func(p, q , xp);
+        if((f(p, q, b) * f(p, q, c)) < 0) {
+            a = c;
+            c = (b + c) / 2;
+        }
     }
-
-    return xp;
+    return c;
+        
 }
 
 double f(int p, int q, double x) {
