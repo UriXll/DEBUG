@@ -7,7 +7,7 @@ int main() {
     int m, n;
     scanf("%d %d", &m, &n);
     int mix = ((m >= n) ? n : m);
-    int opration = 2 * mix - 1 + (m > n);    //操作方向描述变量
+    int opration = 2 * mix - 1 + (m > n);//Operation direction description variable
     int i, j;
     int a;
     for (i = 0; i < m; i++) {
