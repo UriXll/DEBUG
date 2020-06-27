@@ -1,38 +1,33 @@
 #include <stdio.h>
 #include<math.h>
 
-
 int main() {
-    int matrix[100][100];
-    int m;
-    int n;
-    int i,j;
-    int x;
-    scanf("%d %d",&m,&n);
-    for(i=0;i<m;i++){
-    	for(j=0;j<n;j++){
-            printf("%d %d\n", i, j);
-    		scanf("%d", &matrix[i][j]);
-            printf("%d %d\n", i, j);
+	int matrix[100][100];
+	int m, n;
+	int i, j;
+	scanf("%d %d", &m, &n);
+	for (i = 0; i < m; i++) {
+		for (j = 0; j < n; j++) {
+			scanf("%d", &matrix[i][j]);
 		}
 	}
-    return 0;
-	x=0;
-	while(m-x>1||n-x>1){
-		for(x=0;x<n-1;x++){
-			printf("%d ",matrix[x][n-2-x]);
+
+	int x = 0;
+	int temp;
+	while (m - x > 1 && n - x > 1) {
+		for (temp = 0; temp < n - 1 - x; temp++) {
+			printf("%d ", matrix[x][temp + x]);
 		}
-		for(x=0;x<m-1;x++){
-			printf("%d ",matrix[x][n-1-x]);  
+		for (temp = 0; temp < m - 1 - x; temp++) {
+			printf("%d ", matrix[temp + x][n - 1 - x]);
 		}
-		for(x=0;x<n-1;x++){
-			printf("%d ",matrix[m-1-x][n-1-x]);
+		for (temp = 0; temp < n - 1 - x; temp++) {
+			printf("%d ", matrix[m - 1 - x][n - 1 - temp - x]);
 		}
-		for(x=0;x<m-1;x++){
-			printf("%d ",matrix[m-1-x][x]);
+		for (temp = 0; temp < m - 1 - x; temp++) {//xia
+			printf("%d ", matrix[m - 1 - temp - x][x]);
 		}
 		x++;
-	}	
-
-    return 0;
+	}
+	return 0;
 }
