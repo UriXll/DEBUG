@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include<math.h>
 
 int main() {
 	int matrix[100][100];
@@ -24,7 +23,7 @@ int main() {
 		for (temp = 0; temp < n - 1 - x; temp++) {
 			printf("%d ", matrix[m - 1 - x][n - 1 - temp - x]);
 		}
-		for (temp = 0; temp < m - 1 - x; temp++) {//xia
+		for (temp = 0; temp < m - 1 - x; temp++) {
 			printf("%d ", matrix[m - 1 - temp - x][x]);
 		}
 		x++;
