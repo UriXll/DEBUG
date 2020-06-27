@@ -39,10 +39,9 @@ int main() {
         for (j = 0; j < m; j++) {
             if (j != m - 1) {
                 printf("%d ", matrix_c[i][j]);
-            }
-            else {
+            } else {
                 printf("%d\n", matrix_c[i][j]);
-            }
+              }
         }
     }
     return 0;
