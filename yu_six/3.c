@@ -1,4 +1,4 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <string.h>
 
 int main()
@@ -56,4 +56,3 @@ int main()
     printf("%d\n", counter);
     return 0;
 }
-

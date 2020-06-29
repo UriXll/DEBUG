@@ -1,33 +1,57 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <string.h>
-int main() {
-	char before[100];
-    scanf("%s",before);
+int main()
+{
+    char before[100];
+    scanf("%s", before);
     char calculate[100][100];
     int i;
-    int count=0;
-    while(scanf("%s",calculate[i])!=EOF){
+    int count = 0;
+    int r = 0;
+    int w = 0;
+    int x = 0;
+    while (scanf("%s", calculate[i]) != EOF) {
         count++;
     }
-    int result=0;
-    for(i=0;i<3;i++){
-        if(before[i]=='r') result+=4;
-        if(before[i]=='w') result+=2;
-        if(before[i]=='x') result+=1;
+    int result = 0;
+    for (i = 0; i < 3; i++) {
+        if (before[i] == 'r') {
+            result += 4;
+            r++;
+        }
+        if (before[i] == 'w') {
+            result += 2;
+            w++;
+        }
+        if (before[i] == 'x') {
+            result += 1;
+            x++;
+        }
     }
-    //¼ÆËãºóµÄ½á¹û
-    for(i=0;i<count;i++){
-    	if(calculate[i][0]=='+'){
-            if(calculate[i][1]=='r') result+=4;
-            if(calculate[i][1]=='w') result+=2;
-            if(calculate[i][1]=='x') result+=1;
-        }else if(calculate[i][0]=='-'){
-            if(calculate[i][1]=='r') result-=4;
-            if(calculate[i][1]=='w') result-=2;
-            if(calculate[i][1]=='x') result-=1;
-        }    
+    //è®¡ç®—åŽçš„ç»“æžœ
+    for (i = 0; i < count; i++) {
+        if (calculate[i][0] == '+') {
+            if (r == 0 && calculate[i][1] == 'r') {
+                result += 4;
+            }
+            if (w == 0 && calculate[i][1] == 'w') {
+                result += 2;
+            }
+            if (x == 0 && calculate[i][1] == 'x') {
+                result += 1;
+            }
+        } else if (calculate[i][0] == '-') {
+            if (r == 1 && calculate[i][1] == 'r') {
+                result -= 4;
+            }
+            if (w == 1 && calculate[i][1] == 'w') {
+                result -= 2;
+            }
+            if (x == 1 && calculate[i][1] == 'x') {
+                result -= 1;
+            }
+        }
     }
-    
-    printf("%d",result);
+    printf("%d", result);
     return 0;
 }

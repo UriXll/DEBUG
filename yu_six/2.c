@@ -1,7 +1,8 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <string.h>
 
-int main() {
+int main()
+{
     int r = 0, w = 0, x = 0;
     char sign[3];
     char temp[2];
@@ -19,7 +20,7 @@ int main() {
     }
 
     while (scanf("%s", temp) != EOF) {
-        if (strcmp(temp ,"+x")==0) {
+        if (strcmp(temp, "+x") == 0) {
             if (x == 0) {
                 x = 1;
             }
