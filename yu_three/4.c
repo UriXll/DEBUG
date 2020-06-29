@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 void space(int, int);
 
 int main() {
@@ -16,6 +15,7 @@ int main() {
         }
     }
     int counter = 0;
+
     for (i = 1; i <= opration; i++) {
         switch (i % 4) {
         case 1:
@@ -35,7 +35,7 @@ int main() {
                 space(++counter, m * n);
             }break;
         case 0:
-            for (a = (i / 4); a <= (n - i / 4 + 1); a++) {
+            for (a = (i / 4); a < (n - i / 4); a++) {
                 printf("%d", matrix[m - a - 1][i / 4 - 1]);
                 counter++;
                 space(++counter, m * n);
@@ -45,7 +45,5 @@ int main() {
     return 0;
 }
 void space(int a, int b) {
-    if (a != b) {
-        printf(" ");
-    }
+    printf(" ");
 }
