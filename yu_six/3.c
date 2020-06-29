@@ -1,45 +1,59 @@
 #include <stdio.h>
 #include <string.h>
-int main() {
+
+int main()
+{
     int i = 0;
     int counter = 0;
-	char temp[10][3];
+    char temp[10][3];
     char name[3];
-    while (scanf("%s", name) != EOF){
+    int r, w, x;
+    r = 0;
+    w = 0;
+    x = 0;
+    while (scanf("%s", name) != EOF) {
         strcpy(temp[i], name);
-        printf("%s\n", temp[i]);
         i++;
     }
-    
-    for (int j = 0; j < 3; j++){
-        //printf("%d\n", (temp[0][j] == 'w'));
-        if((temp[0][j] == 'w')){
-            counter += 2;
-    	}else if((temp[0][j] == 'r')){
-            counter += 4;
-    	}
-        else if((temp[0][j] == 'x')){
-            counter += 1;
-    	}
-    }
-    for(int a = 0; a < 10; a++){
-        if ((temp[a][0] == '+' && temp[a][1] == 'r')){
-            counter += 4;
-        }else if((temp[a][0] == '+' && temp[a][1] == 'w')){
-            counter += 2;
-        }else if((temp[a][0] == '+' && temp[a][1] == 'x')){
-            counter += 1;
-        }else if((temp[a][0] == '-' && temp[a][1] == 'r')){
-            counter -= 4;
-        }else if((temp[a][0] == '-' && temp[a][1] == 'w')){
-            counter -= 2;
-        }else if((temp[a][0] == '-' && temp[a][1] == 'x')){
-            counter -= 1;
+
+    for (int j = 0; j < 3; j++) {
+        if ((temp[0][j] == 'w')) {
+            w++;
+        } else if ((temp[0][j] == 'r')) {
+            r++;
+        } else if ((temp[0][j] == 'x')) {
+            x++;
         }
-           
-       
     }
-    
-    printf("%d", counter);
+    for (int a = 0; a < 10; a++) {
+        if ((temp[a][0] == '+' && temp[a][1] == 'r')) {
+            if (r == 0) {
+                r++;
+            }
+        } else if ((temp[a][0] == '+' && temp[a][1] == 'w')) {
+            if (w == 0) {
+                w++;
+            }
+        } else if ((temp[a][0] == '+' && temp[a][1] == 'x')) {
+            if (x == 0) {
+                x++;
+            }
+        } else if ((temp[a][0] == '-' && temp[a][1] == 'r')) {
+            if (r == 1) {
+                r--;
+            }
+        } else if ((temp[a][0] == '-' && temp[a][1] == 'w')) {
+            if (w == 1) {
+                w--;
+            }
+        } else if ((temp[a][0] == '-' && temp[a][1] == 'x')) {
+            if (x == 1) {
+                x--;
+            }
+        }
+    }
+    counter = r * 4 + w * 2 + x;
+    printf("%d\n", counter);
     return 0;
 }
+
