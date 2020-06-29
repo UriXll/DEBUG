@@ -53,6 +53,6 @@ int main()
         }
     }
     counter = r * 4 + w * 2 + x;
-    printf("%d\n", counter);
+    printf("%d", counter);
     return 0;
 }

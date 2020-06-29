@@ -31,6 +31,6 @@ int main() {
           }
     }
 
-    printf("%d\n", current);
+    printf("%d", current);
     return 0;
 }

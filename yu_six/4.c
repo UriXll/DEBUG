@@ -5,12 +5,12 @@ int main()
     char before[100];
     scanf("%s", before);
     char calculate[100][100];
-    int i;
+    int i = 0;
     int count = 0;
     int r = 0;
     int w = 0;
     int x = 0;
-    while (scanf("%s", calculate[i]) != EOF) {
+    while (scanf("%s", calculate[i++]) != EOF) {
         count++;
     }
     int result = 0;
@@ -33,22 +33,28 @@ int main()
         if (calculate[i][0] == '+') {
             if (r == 0 && calculate[i][1] == 'r') {
                 result += 4;
+		r++;
             }
             if (w == 0 && calculate[i][1] == 'w') {
                 result += 2;
+		w++;
             }
             if (x == 0 && calculate[i][1] == 'x') {
                 result += 1;
+		x++;
             }
         } else if (calculate[i][0] == '-') {
             if (r == 1 && calculate[i][1] == 'r') {
                 result -= 4;
+		r--;
             }
             if (w == 1 && calculate[i][1] == 'w') {
                 result -= 2;
+		w--;
             }
             if (x == 1 && calculate[i][1] == 'x') {
                 result -= 1;
+		x--;
             }
         }
     }

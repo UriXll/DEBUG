@@ -49,7 +49,7 @@ int main()
             }
         }
     }
-    printf("%d\n", r * 4 + w * 2 + x);
+    printf("%d", r * 4 + w * 2 + x);
 
     return 0;
 }
