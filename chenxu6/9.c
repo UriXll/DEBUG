@@ -85,7 +85,9 @@ int main(int argc, char *argv[])
                 printf("2");
             } else if (chmod == 1) {
                   printf("1");
-              }
+              } else if (chmod == 0) {
+                    printf("0");
+                }
 
     return 0;
 }
