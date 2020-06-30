@@ -3,8 +3,7 @@
 int main()
 {
     int a, b, c;
-    scanf("%d%d%d", &a, &b, &c);
-
+    scanf("%d-%d-%d", &a, &b, &c);
     if ((b < 1) || (b > 12)) {
         printf("NO");
     } else if ((b == 1) && ((c < 1) || (c > 31))) {
@@ -29,9 +28,9 @@ int main()
                             printf("NO");
                         } else if ((b == 12) && ((c < 1) || (c > 31))) {
                               printf("NO");
-                          } else if (((a % 400 == 0) || (a % 4 == 0 && a % 100 != 0)) && b == 2 && (c < 1 || c > 29)) {
+                          } else if (((a % 400 == 0) || (a % 4 == 0)) && (b == 2) && (c < 1 || c > 29)) {
                                 printf("NO");
-                            } else if (((a % 100 == 0 && a % 400 != 0) || (a % 4 != 0)) && b == 2 && (c < 1 || c > 28)) {
+                            } else if (((a % 100 == 0 && a % 400 != 0) || (a % 4 != 0)) && (b == 2) && (c < 1 || c > 28)) {
                                   printf("NO");
                               } else {
                                     printf("YES");
