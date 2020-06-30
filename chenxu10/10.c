@@ -7,7 +7,7 @@ int main()
     scanf("%d", &N);
     printf("2\n");
 
-    for (i = 3; i < N; i++) {
+    for (i = 3; i <= N; i++) {
         for (j = 2; j < i; j++) {
             if (i % j == 0)
                 break;
