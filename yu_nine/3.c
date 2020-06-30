@@ -1,0 +1,23 @@
+﻿#include <stdio.h>
+long long int fun(int n)
+{
+    if (n == 1) {
+        return 0;
+    }
+    if (n == 2)
+        return 1;
+    if (n == 3)
+        return 1;
+    else
+        return fun(n - 2) + fun(n - 3);
+}
+int main()
+{
+    int n;
+
+    while (scanf("%d", &n) != EOF) {
+
+        printf("%lld", fun(n));
+    }
+    return 0;
+}
