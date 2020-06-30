@@ -4,9 +4,9 @@
 int main() {
     int n;
     scanf("%d\n", &n);
-    char name[100][101];
+    char name[200][200];
     int i, j;
-    char largest[101];
+    char largest[200];
     for (i = 0; i < n; i++)
         for(j = 0; scanf("%c", &name[i][j]) != EOF && name[i][j] != '\n'; j++);
     for (strcpy(largest, name[0]), i = 1; i < n; i++)
