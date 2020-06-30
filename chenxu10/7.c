@@ -9,7 +9,7 @@ int main() {
         printf("2");
     } else {
           printf("2\n");
-          for(j=2;j<a;j++) {
+          for(j=2;j<=a;j++) {
               for(i=2;i<j;i++) {
                   if(j%i==0) {
                       break;
