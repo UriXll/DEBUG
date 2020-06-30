@@ -31,4 +31,3 @@ int main()
     printf("%s", name_max);
 
     return 0;
-}

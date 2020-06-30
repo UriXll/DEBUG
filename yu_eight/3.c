@@ -19,4 +19,3 @@ int main()
     }
     printf("%s", maxName);
     return 0;
-}
