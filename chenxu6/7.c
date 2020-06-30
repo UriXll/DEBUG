@@ -40,7 +40,11 @@ int main()
           }
     }
     //output
-    printf("%d", rwx);
+    if (rwx != 1) {
+        printf("%d", rwx);
+    } else {
+        printf("0");
+    }
 
     return 0;
 } 
