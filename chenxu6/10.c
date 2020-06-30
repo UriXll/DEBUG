@@ -1,55 +1,47 @@
 #include <stdio.h>
+
 int main()
 {
     char pms[3];
     char change_pms[100][2];
-    int i;
-    i = 0;
-    int j;
-    int a;
-    a = 0;
-    int b;
-    b = 0;
-    int c;
-    c = 0;
+    int i = 0;
+    int j = 0;
+    int a = 0;
+    
+    scanf("%s", pms);
 
-    scanf("%s\n", pms);
+    while (scanf("%s", change_pms[i++]) != EOF);
 
-    while (scanf("%s\n", change_pms[i++]) != EOF) {
-        scanf("%s\n", change_pms[i++]);
-    }
-
-    for (i = 0; i < strlen(pms); i++) {
+    for (i = 0; i < 3; i++) {
         if (pms[i] == 'r') {
             a += 4;
         } else if (pms[i] == 'w') {
-              a += 2;
-          } else {
-                a += 1;
-            } 
+            a += 2;
+        } else if (pms[i] == 'x') {
+            a += 1;
+        } 
     }
 
-    for (i = 0; i < strlen(change_pms[i]); i++) {
-        j = 0;
+    for (i = 0; i < 100; i++) {
         if (change_pms[i][j] == '+') {
             if (change_pms[i][j + 1] == 'r') {
-                b += 4;
+                a |= 4;   
             } else if (change_pms[i][j + 1] == 'w') {
-                  b += 2;
-              } else {
-                    b += 1;
-                }
-        } else {
-              if (change_pms[i][j + 1] == 'r') {
-                  b -= 4;
-              } else if (change_pms[i][j + 1] == 'w') {
-                    b -= 2;
-                } else {
-                      b -= 1;
-                  }
-          }
+                a |= 2;
+            } else {
+                a |= 1;
+            }
+        } else if (change_pms[i][j] == '-') {
+            if (change_pms[i][j + 1] == 'r') {
+                a &= 3;
+            } else if (change_pms[i][j + 1] == 'w') {
+                a &= 5;
+            } else {
+                a &= 6;
+            }
+        }
     }
-    printf("%d", a + b);
 
+    printf("%d", a);
     return 0;
 }
